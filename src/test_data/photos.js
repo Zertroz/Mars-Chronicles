@@ -1,4 +1,4 @@
-roverPhotos = {
+const roverPhotos = {
   "photos": [
     {
       "id": 840555,
@@ -934,4 +934,4 @@ roverPhotos = {
   ]
 }
 
-export default roverPhotos
+export default roverPhotos;

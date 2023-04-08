@@ -2,18 +2,14 @@ import React from 'react';
 import './App.css';
 import RoverIcon from './features/roverIcon/RoverIcon';
 import Header from './features/header/Header';
+import roverData from './test_data/rovers'
 
 function App() {
   return (
-    <div className="App">
-      <body className="rover-icon-parent">
+      <body className="App">
         <Header />
-        <RoverIcon />
-        <RoverIcon />
-        <RoverIcon />
-        <RoverIcon />
+        <RoverIcon rovers={roverData.rovers} />
       </body>
-    </div>
   );
 }
 

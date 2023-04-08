@@ -1,4 +1,4 @@
-roverData = {
+const roverData = {
   "rovers": [
     {
       "id": 5,
@@ -267,4 +267,4 @@ roverData = {
   ]
 }
 
-export default data
+export default roverData;

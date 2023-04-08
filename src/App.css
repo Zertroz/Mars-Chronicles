@@ -8,11 +8,4 @@
   background: rgb(196,83,42);background: linear-gradient(45deg, rgba(196,83,42,1) 0%, rgba(78,80,128,1) 100%);
 }
 
-.rover-icon-parent {
-  width: 100%;
-  display: flex;
-  flex-grow: 1;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
+
