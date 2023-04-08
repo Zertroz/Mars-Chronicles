@@ -1,0 +1,17 @@
+.rover-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+  border: solid 1px;
+  border-radius: 100px;
+  opacity: .9;
+  background-color: aliceblue;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.rover-icon-img {
+  width: 200px;
+  height: 200px;
+}
