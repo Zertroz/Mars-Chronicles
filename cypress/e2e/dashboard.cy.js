@@ -3,7 +3,6 @@
 // These elements will be interactive images, but should also use the proper semantic HTML to be fully a11y friendly. This also means that elements should be tabbable.
 
 
-
 describe('Dashboard User Stories:', () => {
 
   beforeEach(() => {
