@@ -2,18 +2,22 @@ import React from 'react';
 import './App.css';
 import RoverIcon from './features/roverIcon/RoverIcon';
 import Header from './features/header/Header';
+import roverData from './test_data/rovers'
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <body className="rover-icon-parent">
+      <body className="App">
         <Header />
-        <RoverIcon />
-        <RoverIcon />
-        <RoverIcon />
-        <RoverIcon />
+        <Switch>
+          <Route path="/:rover" render={({match}) => {
+            return <p>{match.params.rover}</p>
+          }}/>
+          <Route path="/">
+            <RoverIcon rovers={roverData.rovers} />
+          </Route>
+        </Switch>
       </body>
-    </div>
   );
 }
 
