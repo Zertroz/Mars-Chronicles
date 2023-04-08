@@ -1,0 +1,25 @@
+.App {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(132deg, #d28c24 0%, #ad4b00 100%);
+}
+
+.rover-icon-parent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.welcomeText {
+  font-size: 70px;
+  margin: 25px;
+  padding: 19px;
+  color: aliceblue;
+  border: solid 1px;
+  border-radius: 28px;
+}
