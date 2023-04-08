@@ -5,21 +5,14 @@
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  background-image: linear-gradient(132deg, #d28c24 0%, #ad4b00 100%);
+  background: rgb(196,83,42);background: linear-gradient(45deg, rgba(196,83,42,1) 0%, rgba(78,80,128,1) 100%);
 }
 
 .rover-icon-parent {
   width: 100%;
   display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
-}
-
-.welcomeText {
-  font-size: 70px;
-  margin: 25px;
-  padding: 19px;
-  color: aliceblue;
-  border: solid 1px;
-  border-radius: 28px;
 }
