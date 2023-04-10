@@ -2,10 +2,10 @@ import Spirit from '../../assets/Spirit.png';
 import Opportunity from '../../assets/Opportunity.png';
 import Perseverance from '../../assets/Perseverance.png';
 import Curiosity  from '../../assets/Curiosity.png';
-import './RoverIcon.css';
+import './RoverIcons.css';
 import { Link } from 'react-router-dom';
 
-function RoverIcon({rovers}) {
+function RoverIcons({rovers}) {
 
   const imgObj = {
     Spirit,
@@ -14,7 +14,7 @@ function RoverIcon({rovers}) {
     Curiosity
   }
 
-  const roversIcons = rovers.map(rover => {
+  const roverIcons = rovers.map(rover => {
     return (
       <Link to={`/${rover.name}`}>
         <div className='rover-icon' key={rover.id}>
@@ -27,9 +27,9 @@ function RoverIcon({rovers}) {
 
   return (
     <div className='rover-icon-container'>
-      {roversIcons}
+      {roverIcons}
     </div>
   )
 }
 
-export default RoverIcon;
+export default RoverIcons;
