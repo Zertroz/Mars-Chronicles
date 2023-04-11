@@ -9,7 +9,9 @@ import Gallery from "../Gallery/Gallery";
 function RoverPage({roverName}) {
   const dispatch = useDispatch()
   const rovers = useSelector(state => state.root.rovers)
-  
+  const roverImages = useSelector(state => state.root.images)
+
+  console.log('img', roverImages)
   const selectedRover = rovers.find(rover => rover.name === roverName)
 
   useEffect(() => {
@@ -18,11 +20,11 @@ function RoverPage({roverName}) {
 
   return (
     <div className="rover-page">
-      <div className="rover-page-left">
+      <div className="rover-page-top">
         {selectedRover && <Details rover={selectedRover}/> }
-        <iframe src="https://mars.nasa.gov/gltf_embed/24883" backgroundColor='#FFFFFF' width="50%" height="100%" frameborder="0"/>
+        <iframe src="https://mars.nasa.gov/gltf_embed/24883"  width="50%" height="100%" frameBorder="0"/>
       </div>
-      <div className="rover-page-right">
+      <div className="rover-page-bottom">
         {/* <Form /> */}
         <Gallery />
       </div>
