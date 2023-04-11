@@ -1,18 +1,25 @@
 .rover-page {
-  display: flex;
-  justify-content: center;
-  flex-grow: 1;
-  padding: 2rem;
-  gap: 5%;
-}
-
-.rover-page-left,
-.rover-page-right {
+  max-height: calc(100% - 180px);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 2rem;
+  gap: 2%;
+}
+
+.rover-page-top {
+  display: flex;
+  justify-content: center;
   gap: 2vh;
-  width: 45%;
+  height: 20rem;
+}
+
+.rover-page-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 2vh;
+  flex-grow: 1;
+  max-height: 60%;
 }
 
 iframe {

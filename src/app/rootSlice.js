@@ -11,7 +11,9 @@ export const rootSlice = createSlice(
       setRovers: (state, action) => {
         state.rovers = action.payload
       },
-      setImages: () => {}
+      setImages: (state, action) => {
+        state.images = action.payload
+      }
     }
   }
 )
