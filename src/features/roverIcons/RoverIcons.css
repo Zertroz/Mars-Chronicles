@@ -1,26 +1,38 @@
-/* .rover-icon-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 200px;
-  width: 200px;
-  border: solid 1px;
-  border-radius: 100px;
-  opacity: .9;
-  background-color: aliceblue;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-} */
-
-.rover-icon-img {
-  width: 200px;
-  height: 200px;
-}
+@import url('https://fonts.cdnfonts.com/css/alien-league-2');
 
 .rover-icon-container {
-  width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-grow: 1;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+  gap: 4vw;
 } 
+
+.rover-link {
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.rover-link:hover {
+  scale: 1.1;
+}
+
+.rover-icon-img {
+  width: 180px;
+  height: 180px;
+  border: 2px solid #FFFFE7;
+  border-radius: 90px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.rover-icon-name {
+  margin: .6rem 0 0 0;
+  font-family: 'Alien League II';
+  font-weight: bold;
+  color: #FFFFE7;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
