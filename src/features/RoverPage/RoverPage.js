@@ -1,22 +1,30 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import './RoverPage.css';
 import Details from "../Details/Details";
+import { setImages } from "../../app/rootSlice";
+import roverPhotos from "../../test_data/photos";
+import Gallery from "../Gallery/Gallery";
 
 function RoverPage({roverName}) {
+  const dispatch = useDispatch()
   const rovers = useSelector(state => state.root.rovers)
   
   const selectedRover = rovers.find(rover => rover.name === roverName)
+
+  useEffect(() => {
+    dispatch(setImages(roverPhotos.photos))
+  }, [])
 
   return (
     <div className="rover-page">
       <div className="rover-page-left">
         {selectedRover && <Details rover={selectedRover}/> }
-        <iframe src="https://mars.nasa.gov/gltf_embed/24883" backgroundColor='#FFFFFF' width="100%" height="420px" frameborder="0"/>
+        <iframe src="https://mars.nasa.gov/gltf_embed/24883" backgroundColor='#FFFFFF' width="50%" height="100%" frameborder="0"/>
       </div>
       <div className="rover-page-right">
         {/* <Form /> */}
-        {/* <Images /> */}
+        <Gallery />
       </div>
     </div>
   )

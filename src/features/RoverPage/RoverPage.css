@@ -1,6 +1,7 @@
 .rover-page {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
   flex-grow: 1;
   padding: 2rem;
   gap: 5%;
@@ -9,10 +10,9 @@
 .rover-page-left,
 .rover-page-right {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   gap: 2vh;
-  width: 45%;
+  height:45%;
 }
 
 iframe {
