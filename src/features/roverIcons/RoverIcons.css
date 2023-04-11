@@ -3,7 +3,7 @@
 .rover-icon-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-content: center;
   flex-grow: 1;
   flex-wrap: wrap;
   gap: 4vw;

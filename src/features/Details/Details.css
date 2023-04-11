@@ -1,8 +1,9 @@
 .details-container {
-  background-color: #ffffe770;
+  color: #222222;
+  background-color: #ffffe74a;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  padding: 12px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  padding: 1.5rem;
 }
 
 .details-container h2 {
