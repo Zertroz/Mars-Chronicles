@@ -16,9 +16,9 @@ function RoverIcons({rovers}) {
 
   const roverIcons = rovers.map(rover => {
     return (
-      <Link to={`/${rover.name}`}>
-        <div className='rover-icon' key={rover.id}>
-          <img src={imgObj[rover.name]} className='rover-icon-img'/>
+      <Link to={`/${rover.name}`} key={rover.id}>
+        <div className='rover-icon'>
+          <img src={imgObj[rover.name]} alt={rover.name} className='rover-icon-img'/>
           <p>{rover.name}</p>
         </div>
       </Link>
