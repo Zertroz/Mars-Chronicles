@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import './RoverPage.css';
 import Details from "../Details/Details";
@@ -11,12 +10,11 @@ function RoverPage({roverName}) {
 
   return (
     <div className="rover-page">
-      <h2>{roverName}</h2>
-      <div>
+      <div className="rover-page-left">
         {selectedRover && <Details rover={selectedRover}/> }
-        <p>Model</p>
+        <iframe src="https://mars.nasa.gov/gltf_embed/24883" backgroundColor='#FFFFFF' width="100%" height="420px" frameborder="0"/>
       </div>
-      <div>
+      <div className="rover-page-right">
         {/* <Form /> */}
         {/* <Images /> */}
       </div>

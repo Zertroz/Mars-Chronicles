@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import './App.css';
 import RoverIcons from './features/roverIcons/RoverIcons';
 import Header from './features/header/Header';
 import roverData from './test_data/rovers'
@@ -7,6 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 import RoverPage from './features/RoverPage/RoverPage';
 import { useDispatch } from 'react-redux';
 import { setRovers } from './app/rootSlice';
+import './App.css';
 
 function App() {
   const dispatch = useDispatch()
