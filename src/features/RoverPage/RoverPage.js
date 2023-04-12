@@ -17,7 +17,7 @@ function RoverPage({roverName}) {
 
   useEffect(() => {
     dispatch(setImages(roverPhotos.photos))
-  }, [])
+  }, [dispatch])
 
   return (
     <div className="rover-page">
