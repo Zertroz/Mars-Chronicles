@@ -4,19 +4,26 @@ import roversFixture from "../fixtures/roversFixture";
 
 describe('Dashboard User Stories:', () => {
 
+  const roversPath = 'https://api.nasa.gov/mars-photos/api/v1/rovers/?api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV'
+
   beforeEach(() => {
-    cy.intercept({method:'GET', url:'https://api.nasa.gov/mars-photos/api/v1/rovers/?api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV'}, roversFixture);
+
+    cy.intercept({method:'GET', url: roversPath}, roversFixture);
     cy.visit('http://localhost:3000/');
+
   });
   
   it('user should see the app title on page load', () => {
+
     cy.get('h1')
-    .should('exist')
-    .should('be.visible')
-    .contains('Mars Chronicles');
+      .should('exist')
+      .should('be.visible')
+      .contains('Mars Chronicles');
+
   });
 
   it('user should see all rover images and they should have alt text', () => {
+
     cy.get('[href="/Curiosity"] > div > .rover-icon-img')
      .should('exist').should('be.visible')
      .should('have.attr', 'alt');
@@ -24,5 +31,6 @@ describe('Dashboard User Stories:', () => {
     cy.get('[href="/Spirit"] > div > .rover-icon-img')
      .should('exist').should('be.visible')
      .should('have.attr', 'alt');
+
   });
 })
