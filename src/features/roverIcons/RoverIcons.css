@@ -10,7 +10,7 @@
 } 
 
 .rover-link {
-  text-decoration: none;
+  /* text-decoration: none; */
   cursor: pointer;
   transition: all .2s ease;
 }

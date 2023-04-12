@@ -7,4 +7,6 @@
   background: rgb(196,83,42);background: linear-gradient(45deg, rgba(196,83,42,1) 0%, rgba(78,80,128,1) 100%);
 }
 
-
+a {
+  text-decoration: none;
+}
