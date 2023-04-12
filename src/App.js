@@ -7,16 +7,20 @@ import RoverPage from './features/RoverPage/RoverPage';
 import { useDispatch } from 'react-redux';
 import { setRovers } from './app/rootSlice';
 import './App.css';
-import fetchRovers from './features/Apicalls';
+import {fetchRovers} from './features/Apicalls';
 
 function App() {
   const dispatch = useDispatch()
-  
-  useEffect(async () => {
+  const fetchData = async () => {
     const roverData = await fetchRovers()
     dispatch(setRovers(roverData.rovers))
-  }, [])
+  }
 
+
+  useEffect(() => {
+    console.log('useEffect in App')
+    fetchData()
+  }, [])
 
   return (
       <main className="App">
