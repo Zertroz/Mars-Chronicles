@@ -1,12 +1,17 @@
 @import url('https://fonts.cdnfonts.com/css/alien-league-2');
 
 header {
-  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 100px;
+  width: 100%;
 }
 
 .header-logo {
   font-family: 'Alien League II';
-  font-weight: bold;
   font-size: 4rem;
   color: #FFFFE7;
   margin: 0;
