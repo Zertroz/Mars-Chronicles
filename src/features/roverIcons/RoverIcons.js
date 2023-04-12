@@ -4,9 +4,10 @@ import Perseverance from '../../assets/Perseverance.png';
 import Curiosity  from '../../assets/Curiosity.png';
 import { Link } from 'react-router-dom';
 import './RoverIcons.css';
+import { useSelector } from 'react-redux';
 
-function RoverIcons({rovers}) {
-
+function RoverIcons() {
+  const rovers = useSelector(state => state.root.rovers);
   const imgObj = {
     Spirit,
     Opportunity,
