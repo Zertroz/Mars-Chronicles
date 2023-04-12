@@ -23,7 +23,7 @@ function RoverPage({roverName}) {
     <div className="rover-page">
       <div className="rover-page-top">
         {selectedRover && <Details rover={selectedRover}/> }
-        <iframe src="https://mars.nasa.gov/gltf_embed/24883" height="100%" frameBorder="0"/>
+        <iframe src="https://mars.nasa.gov/gltf_embed/24883"  frameBorder="0"/>
       </div>
       <Form />
       <div className="rover-page-bottom">
