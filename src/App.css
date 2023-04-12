@@ -1,9 +1,9 @@
 .App {
   display:flex;
   flex-direction: column;
+  align-items: center;
   height: 100vh;
-  /* background-image: url('https://www.imagebee.org/celebrities/mars-surface/mars-surface-wallpaper-25646-26328-hd-wallpapers-1920x1200.jpg'); */
-  /* background-size: cover; */
+  width: 100%;
   background: rgb(196,83,42);background: linear-gradient(45deg, rgba(196,83,42,1) 0%, rgba(78,80,128,1) 100%);
 }
 

@@ -5,6 +5,7 @@ import Details from "../Details/Details";
 import { setImages } from "../../app/rootSlice";
 import roverPhotos from "../../test_data/photos";
 import Gallery from "../Gallery/Gallery";
+import Form from "../Form/Form";
 
 function RoverPage({roverName}) {
   const dispatch = useDispatch()
@@ -22,10 +23,10 @@ function RoverPage({roverName}) {
     <div className="rover-page">
       <div className="rover-page-top">
         {selectedRover && <Details rover={selectedRover}/> }
-        <iframe src="https://mars.nasa.gov/gltf_embed/24883"  width="50%" height="100%" frameBorder="0"/>
+        <iframe src="https://mars.nasa.gov/gltf_embed/24883"  frameBorder="0"/>
       </div>
+      <Form />
       <div className="rover-page-bottom">
-        {/* <Form /> */}
         <Gallery />
       </div>
     </div>
