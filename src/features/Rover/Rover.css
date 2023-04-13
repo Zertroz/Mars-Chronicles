@@ -1,0 +1,25 @@
+.rover-link {
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.rover-link:hover {
+  scale: 1.1;
+}
+
+.rover-icon-img {
+  width: 180px;
+  height: 180px;
+  border: 2px solid #FFFFE7;
+  border-radius: 90px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.rover-icon-name {
+  margin: .6rem 0 0 0;
+  font-family: 'Alien League II';
+  font-weight: bold;
+  color: #FFFFE7;
+  font-size: 1.8rem;
+  text-align: center;
+}

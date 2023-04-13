@@ -1,5 +1,6 @@
 import React from "react";
 import './Details.css';
+import { missionStatements } from "../../roverDataLocal";
 
 function Details({rover}) {
   return (
@@ -23,7 +24,7 @@ function Details({rover}) {
           <p className="data">{rover.status}</p>
         </div>
       </div>
-      <p className="mission-statement">The mission of the Mars 2020 Perseverance rover focuses on surface-based studies of the Martian environment, seeking preserved signs of biosignatures in rock samples that formed in ancient Martian environments with conditions that might have been favorable to microbial life.</p>
+      <p className="mission-statement">{ missionStatements[rover.name] }</p>
     </div>
   )
 }
