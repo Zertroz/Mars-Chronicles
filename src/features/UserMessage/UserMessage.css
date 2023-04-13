@@ -1,0 +1,14 @@
+.user-message {
+  margin: 0;
+  color: #222222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Alien League II';
+  font-size: 5rem;
+  flex-grow: 1;
+  min-width: 26rem;
+  min-height: 12rem;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+}

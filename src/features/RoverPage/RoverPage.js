@@ -2,15 +2,16 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import './RoverPage.css';
 import Details from "../Details/Details";
+import UserMessage from '../UserMessage/UserMessage';
 import { setImages } from "../../app/rootSlice";
 import Gallery from "../Gallery/Gallery";
 import Form from "../Form/Form";
 import { fetchImages } from "../Apicalls";
+import { modelUrl } from "../../roverDataLocal";
 
 function RoverPage({roverName}) {
   const dispatch = useDispatch()
   const rovers = useSelector(state => state.root.rovers)
-
   const selectedRover = rovers.find(rover => rover.name === roverName)
 
   const fetchData = async () => {
@@ -19,15 +20,15 @@ function RoverPage({roverName}) {
   }
 
   useEffect(() => {
-    console.log('useEffect in roverPage')
     fetchData()
-  }, [dispatch])
+  })
 
   return (
     <div className="rover-page">
       <div className="rover-page-top">
-        {selectedRover && <Details rover={selectedRover}/> }
-        <iframe src="https://mars.nasa.gov/gltf_embed/24883"  frameBorder="0"/>
+        {selectedRover ? <><Details rover={selectedRover}/></> 
+        : <UserMessage message={'Loading...'}/>}
+        <iframe src={ modelUrl[roverName] } title="rover3D" frameBorder="0"/>
       </div>
       <Form />
       <div className="rover-page-bottom">
