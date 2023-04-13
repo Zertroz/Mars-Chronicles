@@ -13,9 +13,10 @@ function RoverPage({roverName}) {
   const dispatch = useDispatch()
   const rovers = useSelector(state => state.root.rovers)
   const selectedRover = rovers.find(rover => rover.name === roverName)
+  console.log(selectedRover)
 
   const fetchData = async () => {
-    const roverPhotos = await fetchImages()
+    const roverPhotos = await fetchImages('sol', roverName, '100')
     dispatch(setImages(roverPhotos.photos))
   }
 
@@ -26,7 +27,7 @@ function RoverPage({roverName}) {
   return (
     <div className="rover-page">
       <div className="rover-page-top">
-        {selectedRover ? <><Details rover={selectedRover}/></> 
+        {selectedRover ? <Details rover={selectedRover}/>
         : <UserMessage message={'Loading...'}/>}
         <iframe src={ modelUrl[roverName] } title="rover3D" frameBorder="0"/>
       </div>

@@ -5,7 +5,7 @@ import './RoverIcons.css';
 
 function RoverIcons() {
   const rovers = useSelector(state => state.root.rovers);
-  const roverIcons = rovers.map(rover => <Rover rover={rover}/>)
+  const roverIcons = rovers.map(rover => <Rover rover={rover} key={rover.name}/>)
 
   return (
     <div className='rover-icon-container'>
