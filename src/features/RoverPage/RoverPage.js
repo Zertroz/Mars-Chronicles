@@ -13,7 +13,6 @@ function RoverPage({roverName}) {
   const dispatch = useDispatch()
   const rovers = useSelector(state => state.root.rovers)
   const selectedRover = rovers.find(rover => rover.name === roverName)
-  console.log(selectedRover)
 
   const fetchData = async () => {
     const roverPhotos = await fetchImages('sol', roverName, '100')
@@ -31,7 +30,7 @@ function RoverPage({roverName}) {
         : <UserMessage message={'Loading...'}/>}
         <iframe src={ modelUrl[roverName] } title="rover3D" frameBorder="0"/>
       </div>
-      <Form />
+      <Form rover={selectedRover} />
       <div className="rover-page-bottom">
         <Gallery />
       </div>
