@@ -12,7 +12,7 @@ export const rootSlice = createSlice(
         state.rovers = action.payload
       },
       setImages: (state, action) => {
-        state.images = action.payload
+        state.images = action.payload.slice(0, 1000)
       }
     }
   }

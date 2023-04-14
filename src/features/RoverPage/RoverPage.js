@@ -14,14 +14,6 @@ function RoverPage({roverName}) {
   const rovers = useSelector(state => state.root.rovers)
   const selectedRover = rovers.find(rover => rover.name === roverName)
 
-  const fetchData = async () => {
-    const roverPhotos = await fetchImages('sol', roverName, '100')
-    dispatch(setImages(roverPhotos.photos))
-  }
-
-  useEffect(() => {
-    fetchData()
-  })
 
   return (
     <div className="rover-page">
