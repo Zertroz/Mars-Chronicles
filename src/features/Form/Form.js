@@ -23,23 +23,35 @@ function Form({rover}) {
 
   const fetchData = async (event) => {
     event.preventDefault()
-    const roverPhotos = await fetchImages(type, rover.name, value)
-    dispatch(setImages(roverPhotos.photos))
+    if(type || value) {
+      const roverPhotos = await fetchImages(type, rover.name, value)
+      dispatch(setImages(roverPhotos.photos))
+    }
   }
+
+  useEffect(() => {
+    return function cleanup () {
+      dispatch(setImages([]))
+    }
+  })
   
   return(
     <form>
-      <label >Sol</label>
-      <input name='sol' type='number' min='0' max={maxSols} placeholder={0} value={sol} onChange={event => {
-        setSol(event.target.value)
-        setDate('')
-      }} />
-      <label>Earth Date</label>
-      <input name ='earth-date' type='date' min={minDate} max={maxDate} value={date} onChange={event => {
-        setDate(event.target.value)
-        setSol('')
-      }} />
-      <button onClick={fetchData}>Submit</button>
+      <div className='input-parent'>
+        <label for="sol">Mars Sol:</label>
+        <input className='sol' name='sol' type='number' min='0' max={maxSols} placeholder={'Select Sol'} value={sol} onChange={event => {
+          setSol(event.target.value)
+          setDate('')
+        }} />
+      </div>
+      <div className='input-parent'>
+        <label for="earth-date">Earth Date:</label>
+        <input name ='earth-date' type='date' min={minDate} max={maxDate} value={date} onChange={event => {
+          setDate(event.target.value)
+          setSol('')
+        }} />
+      </div>
+      <button onClick={fetchData}>Get Photos</button>
     </form>
   )
 }
