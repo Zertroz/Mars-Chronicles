@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import Rover from '../Rover/Rover';
 import UserMessage from '../UserMessage/UserMessage';
-import './RoverIcons.css';
+import './roverIcons.css';
 
 function RoverIcons() {
   const rovers = useSelector(state => state.root.rovers);

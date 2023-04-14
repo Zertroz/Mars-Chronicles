@@ -13,4 +13,32 @@
   background-color: rgba(255, 255, 255, 0.3);
   text-align: center;
   padding: 12px;
+  animation: landing 6s linear infinite;
+}
+
+@keyframes landing {
+  0% {
+    font-size: 3rem;
+    background-color: Orgba(255, 255, 255, 0.3);
+  }
+  20% {
+    font-size: 4rem;
+    background-color: Orgba(255, 235, 235, 0.4);
+  }
+  40% {
+    font-size: 5rem;
+    background-color: Orgba(255, 215, 215, 0.5);
+  }
+  60% {
+    font-size: 6rem;
+    background-color: Orgba(255, 195, 195, 0.6);
+  }
+  80% {
+    font-size: 7rem;
+    background-color: Orgba(255, 175, 175, 0.7);
+  }
+  100% {
+    font-size: 8rem;
+    background-color: Orgba(255, 155, 155, 0.8);
+  }
 }

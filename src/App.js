@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import RoverIcons from './features/RoverIcons/RoverIcons';
+import RoverIcons from './features/roverIcons/roverIcons';
 import Header from './features/Header/Header';
 import { Route, Switch } from 'react-router-dom';
 import RoverPage from './features/RoverPage/RoverPage';
