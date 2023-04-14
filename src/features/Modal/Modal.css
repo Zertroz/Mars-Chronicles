@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* padding: 25%; */
     position: fixed;
     top: 0;
     bottom: 0;
@@ -16,4 +15,13 @@
 
 .modal-img {
     max-width: 80%;
+}
+
+.x-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: auto;
+    height: auto;
+    font-size: 18px;
 }

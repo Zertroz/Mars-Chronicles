@@ -8,9 +8,8 @@ import Form from "../Form/Form";
 import { modelUrl } from "../../roverDataLocal";
 
 function RoverPage({roverName}) {
-  const rovers = useSelector(state => state.root.rovers)
-  const selectedRover = rovers.find(rover => rover.name === roverName)
-
+  const rovers = useSelector(state => state.root.rovers);
+  const selectedRover = rovers.find(rover => rover.name === roverName);
 
   return (
     <div className="rover-page">
