@@ -1,16 +1,13 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import './RoverPage.css';
 import Details from "../Details/Details";
 import UserMessage from '../UserMessage/UserMessage';
-import { setImages } from "../../app/rootSlice";
 import Gallery from "../Gallery/Gallery";
 import Form from "../Form/Form";
-import { fetchImages } from "../Apicalls";
 import { modelUrl } from "../../roverDataLocal";
 
 function RoverPage({roverName}) {
-  const dispatch = useDispatch()
   const rovers = useSelector(state => state.root.rovers)
   const selectedRover = rovers.find(rover => rover.name === roverName)
 

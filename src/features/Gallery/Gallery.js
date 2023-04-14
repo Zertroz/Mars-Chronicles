@@ -13,7 +13,7 @@ function Gallery () {
         {roverTiles}
       </section>
       :
-      <UserMessage message={'Loading...'}/>
+      <UserMessage message={'Select Sol or Date...'}/>
   )
 }
 
