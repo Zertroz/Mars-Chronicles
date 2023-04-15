@@ -1,0 +1,27 @@
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.606);
+    overflow: auto;
+    backdrop-filter: blur(8px);
+    z-index: 10;
+}
+
+.modal-img {
+    max-width: 80%;
+}
+
+.x-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: auto;
+    height: auto;
+    font-size: 18px;
+}
