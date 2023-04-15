@@ -58,5 +58,48 @@ describe('RoverPage user stories:', () => {
       .should('exist').should('be.visible')
       .contains('focuses on surface-based studies of the Martian environment')
   })
-  
+
+  it('Another visible element will be a 3d rover model:', () => {
+
+    cy.get('iframe')
+    .should('exist').should('be.visible')
+
+  })
+
+  it('There will also be a form to refine our gallery results with, but the gallery starts empty:', () => {
+
+    cy.get('form')
+    .should('exist').should('be.visible')
+      .get(':nth-child(1) > label')
+      .contains('Mars Sol:')
+
+    cy.get('form')
+    .should('exist').should('be.visible')
+      .get(':nth-child(2) > label')
+      .contains('Earth Date:')
+         
+    cy.get('.user-message')
+    .should('exist').should('be.visible')
+    .contains('Select Sol or Date...')
+      
+    })
+
+  it('When a user interacts with the form and submits their query, they should have pictures returned matching those parameters:', ()=> {
+
+    cy.get('.sol')
+    .click()
+      .type('1')
+        .should('have.value', '1')
+      .type('0')
+        .should('have.value', '10')
+      .type('0')
+        .should('have.value', '100')
+
+    cy.get('button')
+    .click()
+
+    cy.get('.gallery-tile')
+    .should('have.length', 49)
+  })
+
 })
