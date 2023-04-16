@@ -18,27 +18,27 @@
 
 @keyframes landing {
   0% {
-    font-size: 3rem;
+    font-size: 1rem;
     background-color: Orgba(255, 255, 255, 0.3);
   }
   20% {
-    font-size: 4rem;
+    font-size: 1.5rem;
     background-color: Orgba(255, 235, 235, 0.4);
   }
   40% {
-    font-size: 5rem;
+    font-size: 2rem;
     background-color: Orgba(255, 215, 215, 0.5);
   }
   60% {
-    font-size: 6rem;
+    font-size: 2.5rem;
     background-color: Orgba(255, 195, 195, 0.6);
   }
   80% {
-    font-size: 7rem;
+    font-size: 3rem;
     background-color: Orgba(255, 175, 175, 0.7);
   }
   100% {
-    font-size: 8rem;
+    font-size: 3.5rem;
     background-color: Orgba(255, 155, 155, 0.8);
   }
 }

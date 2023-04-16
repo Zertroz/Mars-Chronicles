@@ -1,24 +1,28 @@
 import React, { useEffect } from 'react';
-import RoverIcons from './features/roverIcons/roverIcons';
+import RoverIcons from './features/RoverIcons/RoverIcons';
 import Header from './features/Header/Header';
 import { Route, Switch } from 'react-router-dom';
 import RoverPage from './features/RoverPage/RoverPage';
 import { useDispatch } from 'react-redux';
-import { setRovers } from './app/rootSlice';
+import { setRovers, setErrorMessage} from './app/rootSlice';
 import {fetchRovers} from './features/Apicalls';
 import './App.css';
 
 function App() {
   const dispatch = useDispatch()
-  const fetchData = async () => {
-    const roverData = await fetchRovers()
-    dispatch(setRovers(roverData.rovers))
-  }
-
 
   useEffect(() => {
-    fetchData()
-  })
+    const fetchData = async () => {
+      const roverData = await fetchRovers();
+      if(roverData instanceof Error) {
+        dispatch(setErrorMessage(roverData.toString()));
+      } else {
+        dispatch(setErrorMessage(''));
+        dispatch(setRovers(roverData.rovers));
+      }
+    }
+    fetchData();
+  }, [dispatch])
 
   return (
       <main className="App">

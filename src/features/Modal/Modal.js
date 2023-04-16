@@ -5,7 +5,7 @@ const Modal = ({modalSrc, setModalSrc}) => {
   
   return (
     <div className='modal'>
-      <img className='modal-img' src={modalSrc}/>
+      <img className='modal-img' src={modalSrc} alt='Selected modal'/>
       <button className='x-button' onClick={() => setModalSrc('')}>X</button>
     </div>
   )

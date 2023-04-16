@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchImages } from '../Apicalls';
 import { useDispatch } from 'react-redux';
-import { setImages } from '../../app/rootSlice';
+import { setImages, setErrorMessage } from '../../app/rootSlice';
 import './Form.css';
 
 function Form({rover}) {
@@ -23,29 +23,34 @@ function Form({rover}) {
 
   const fetchData = async (event) => {
     event.preventDefault();
-    if(type || value) {
-      const roverPhotos = await fetchImages(type, rover.name, value);
+    const roverPhotos = await fetchImages(type, rover.name, value);
+    if(roverPhotos instanceof Error) {
+      dispatch(setErrorMessage(roverPhotos.toString()));
+    }else {
+      dispatch(setErrorMessage(''));
       dispatch(setImages(roverPhotos.photos));
+      roverPhotos.photos.length ? dispatch(setErrorMessage('')) : dispatch(setErrorMessage('No Photos Found'));
     }
   }
 
   useEffect(() => {
-    return function cleanup () {
+    return () => {
       dispatch(setImages([]));
+      dispatch(setErrorMessage(''));
     }
-  })
+  }, [dispatch])
   
   return(
     <form>
       <div className='input-parent'>
-        <label for="sol">Mars Sol:</label>
+        <label>Mars Sol:</label>
         <input className='sol' name='sol' type='number' min='0' max={maxSols} placeholder={'Select Sol'} value={sol} onChange={event => {
           setSol(event.target.value);
           setDate('');
         }} />
       </div>
       <div className='input-parent'>
-        <label for="earth-date">Earth Date:</label>
+        <label>Earth Date:</label>
         <input name ='earth-date' type='date' min={minDate} max={maxDate} value={date} onChange={event => {
           setDate(event.target.value);
           setSol('');

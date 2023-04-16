@@ -5,19 +5,23 @@ export const rootSlice = createSlice(
     name: 'root',
     initialState: {
       rovers: [],
-      images: []
+      images: [],
+      errorMsg: ''
     },
     reducers: {
       setRovers: (state, action) => {
-        state.rovers = action.payload
+        state.rovers = action.payload;
       },
       setImages: (state, action) => {
-        state.images = action.payload.slice(0, 1000)
+        state.images = action.payload.slice(0, 1000);
+      },
+      setErrorMessage: (state, action) => {
+        state.errorMsg = action.payload;
       }
     }
   }
 )
 
-export const { setRovers, setImages } = rootSlice.actions
-export default rootSlice.reducer
+export const { setRovers, setImages, setErrorMessage } = rootSlice.actions;
+export default rootSlice.reducer;
 
