@@ -7,19 +7,19 @@ import photosFixture from "../fixtures/imagesFixture";
 
 describe('RoverPage user stories:', () => {
 
-  const roversPath = 'https://api.nasa.gov/mars-photos/api/v1/rovers/?api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV'
-  const perseverancePhotosPath = 'https://api.nasa.gov/mars-photos/api/v1/rovers/Perseverance/photos?sol=100&api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV'
+  const roversPath = 'https://api.nasa.gov/mars-photos/api/v1/rovers/?api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV';
+  const perseverancePhotosPath = 'https://api.nasa.gov/mars-photos/api/v1/rovers/Perseverance/photos?sol=100&api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV';
 
   beforeEach(() => {
 
     cy.intercept({method:'GET', url: roversPath}, roversFixture);
-    cy.intercept({method:'GET', url: perseverancePhotosPath}, photosFixture)
+    cy.intercept({method:'GET', url: perseverancePhotosPath}, photosFixture);
     cy.visit('http://localhost:3000/');
 
     cy.get('[href="/Perseverance"] > div')
-      .click()
+      .click();
 
-  })
+  });
 
   it('When a user chooses a rover, the rover icons should disappear but the header should remain:', () => {
 
@@ -28,61 +28,61 @@ describe('RoverPage user stories:', () => {
       .contains('Mars Chronicles');
   
     cy.get('[href="/Curiosity"] > div > .rover-icon-img')
-     .should('not.exist')
+     .should('not.exist');
 
     cy.get('[href="/Spirit"] > div > .rover-icon-img')
-     .should('not.exist')
-  })
+     .should('not.exist');
+  });
 
   it('When the view switches to show details, multiple text fields will provide information:', ()=> {
 
     cy.get('.details-container')
       .should('exist').should('be.visible')
-      .contains('Perseverance')
+      .contains('Perseverance');
 
     cy.get('.data-label')
       .should('have.length', 4)
-      .contains('Launch')
+      .contains('Launch');
 
     cy.get('.data-label')
-      .contains('Landing')
+      .contains('Landing');
 
     cy.get('.data')
       .should('have.length', 4)
-      .contains('2020-07-30')
+      .contains('2020-07-30');
     
     cy.get('.data')
-      .contains('2021-02-18')
+      .contains('2021-02-18');
 
     cy.get('.mission-statement')
       .should('exist').should('be.visible')
-      .contains('focuses on surface-based studies of the Martian environment')
-  })
+      .contains('focuses on surface-based studies of the Martian environment');
+  });
 
   it('Another visible element will be a 3d rover model:', () => {
 
     cy.get('iframe')
-    .should('exist').should('be.visible')
+    .should('exist').should('be.visible');
 
-  })
+  });
 
   it('There will also be a form to refine our gallery results with, but the gallery starts empty:', () => {
 
     cy.get('form')
     .should('exist').should('be.visible')
       .get(':nth-child(1) > label')
-      .contains('Mars Sol:')
+      .contains('Mars Sol:');
 
     cy.get('form')
     .should('exist').should('be.visible')
       .get(':nth-child(2) > label')
-      .contains('Earth Date:')
+      .contains('Earth Date:');
          
     cy.get('.user-message')
     .should('exist').should('be.visible')
-    .contains('Select Sol or Date...')
+    .contains('Select Sol or Date...');
       
-    })
+    });
 
   it('When a user interacts with the form and submits their query, they should have pictures returned matching those parameters:', ()=> {
 
@@ -93,27 +93,27 @@ describe('RoverPage user stories:', () => {
       .type('0')
         .should('have.value', '10')
       .type('0')
-        .should('have.value', '100')
+        .should('have.value', '100');
 
     cy.get('button')
-    .click()
+    .click();
 
     cy.get('.gallery-tile')
-    .should('have.length', 49)
-  })
+    .should('have.length', 49);
+  });
 })
 
 describe('Sad paths', () => {
-  const roversPath = 'https://api.nasa.gov/mars-photos/api/v1/rovers/?api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV'
-  const perseverancePhotosPath = 'https://api.nasa.gov/mars-photos/api/v1/rovers/Perseverance/photos?sol=100&api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV'
+  const roversPath = 'https://api.nasa.gov/mars-photos/api/v1/rovers/?api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV';
+  const perseverancePhotosPath = 'https://api.nasa.gov/mars-photos/api/v1/rovers/Perseverance/photos?sol=100&api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV';
 
   beforeEach(() => {
     cy.intercept("GET", roversPath, roversFixture);
     
-    cy.visit('http://localhost:3000/')
+    cy.visit('http://localhost:3000/');
     cy.get('[href="/Perseverance"] > div')
-      .click()
-  })
+      .click();
+  });
 
   it('Should display an error when there is a server error', () => {
     cy.intercept({
@@ -125,10 +125,10 @@ describe('Sad paths', () => {
       body: {
         message: ''
       }
-    })
+    });
     cy.get('.sol').type('100').get('button').click()
-    .get('.user-message').contains('Error: 403')
-  })
+    .get('.user-message').contains('Error: 403');
+  });
 
   it('Should display an error when there are no photos for the selected date', () => {
     cy.intercept({
@@ -136,6 +136,6 @@ describe('Sad paths', () => {
       url: 'https://api.nasa.gov/mars-photos/api/v1/rovers/Perseverance/photos?earth_date=2022-12-22&api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV'
     })
     cy.get(':nth-child(2) > input').type('2022-12-22')
-    .get('button')
-  })
+    .get('button').click().get('.user-message').contains('No Photos Found');
+  });
 })
