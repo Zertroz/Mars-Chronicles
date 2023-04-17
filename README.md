@@ -31,6 +31,8 @@ To run the test suite associated with the functions behind the scenes and how th
 Run 'npm run cypress' from the terminal while within the main directory of the application and select E2E Testing, and your chosen browser in the following window.
 
 ## Preview of App:
+[//]: <>
+![](src/assets/demo.gif)
 
 ## Live demo:
 
