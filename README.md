@@ -1,46 +1,61 @@
-# Getting Started with Create React App and Redux
+# Mars Chronicles
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+## Abstract:
+[//]: <>
 
-## Available Scripts
+## Installation Instructions:
+[//]: <>
 
-In the project directory, you can run:
+1. Clone down this repo
 
-### `npm start`
+1. Install dependencies by using ‘npm install’ in your terminal within the root directory.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. To host website on your local machine, run ’npm start’ in terminal.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. A window should be opened in your default browser, if not, navigate to http://localhost:3000 in your preferred browser to view the hosted application!
 
-### `npm test`
+Alternatively, the app is deployed via <Vercel?> and that link is below.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Testing Instructions:
+[//]: <>
 
-### `npm run build`
+To run the test suite associated with the functions behind the scenes and how they interact: 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Run 'npm run cypress' from the terminal while within the main directory of the application and select E2E Testing, and your chosen browser in the following window.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Preview of App:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Live demo:
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Application is deployed live at: (<deployment link here>)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Context:
+[//]: <>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project was assigned in the third week of module 3 for Front End students at Turing. The work was completed over the course of the following two weeks. 
 
-## Learn More
+## Contributors:
+[//]: <>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Kass Daniello] (https://github.com/Zertroz) \
+[Jason Kirchman](https://github.com/kirch1) \
+[Bea Ordonez](https://github.com/bea-ordonez) \
+[Shane Misra](https://github.com/sdmisra) 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Learning Goals:
+[//]: <>
+
+- Further practice React skillset
+- Familiarize ourselves with Redux
+- Create a multi-page UX using Router
+- Implement a controlled form
+- Practice async GitHub workflow
+- Provide full E2E testing coverage via Cypress
+- Deploy final result
+
+## Future Feature Ideas:
+[//]: <>
+
+- User login feature, enabling favoriting / saving photo selection between visits
