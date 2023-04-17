@@ -1,6 +1,13 @@
 # Mars Chronicles
 
 ## Abstract:
+
+  For millenia mankind has looked up at the planetary bodies that encircle us and sought to understand their nature, whether that be through folklore or scientific observation. The Mars Chronicles app enables users to foster this sense of wonder as they explore photographic data from the surface of Mars itself - returned directly from NASA's past and current Mars Rover missions.
+
+  A user can choose between the four Mars rovers that have existed thus far, including rovers that have completed their tour of service and have since been retired (to rural Mars). Users can then choose either a Mars sol (a Mars day/night cycle during the missions duration) or the date on Earth they want results from. Once criteria has been selected, a user will be shown the photos taken by the mars rover on that day, which they can interact with in order to see in a larger, singular view in full resolution.
+
+  This app is ideal to share with friends and family, and is appropriate for all audiences to help ensure that we have a new generation of people looking up at the sky and wondering where we can take our instruments next.
+
 [//]: <>
 
 ## Installation Instructions:
@@ -39,7 +46,7 @@ This project was assigned in the third week of module 3 for Front End students a
 ## Contributors:
 [//]: <>
 
-[Kass Daniello] (https://github.com/Zertroz) \
+[Kass Daniello](https://github.com/Zertroz) \
 [Jason Kirchman](https://github.com/kirch1) \
 [Bea Ordonez](https://github.com/bea-ordonez) \
 [Shane Misra](https://github.com/sdmisra) 
@@ -58,4 +65,5 @@ This project was assigned in the third week of module 3 for Front End students a
 ## Future Feature Ideas:
 [//]: <>
 
-- User login feature, enabling favoriting / saving photo selection between visits
+- User login feature, enabling saving photo selection between visits
+- Form addition - allow gallery search refinement by camera mount location / type
