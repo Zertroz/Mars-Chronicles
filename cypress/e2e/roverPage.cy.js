@@ -8,7 +8,7 @@ import photosFixture from "../fixtures/imagesFixture";
 describe('RoverPage user stories:', () => {
 
   const roversPath = 'https://api.nasa.gov/mars-photos/api/v1/rovers/?api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV'
-  const perseverancePhotosPath = 'https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/photos?sol=100&api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV'
+  const perseverancePhotosPath = 'https://api.nasa.gov/mars-photos/api/v1/rovers/Perseverance/photos?sol=100&api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV'
 
   beforeEach(() => {
 
@@ -101,5 +101,41 @@ describe('RoverPage user stories:', () => {
     cy.get('.gallery-tile')
     .should('have.length', 49)
   })
+})
 
+describe('Sad paths', () => {
+  const roversPath = 'https://api.nasa.gov/mars-photos/api/v1/rovers/?api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV'
+  const perseverancePhotosPath = 'https://api.nasa.gov/mars-photos/api/v1/rovers/Perseverance/photos?sol=100&api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV'
+
+  beforeEach(() => {
+    cy.intercept("GET", roversPath, roversFixture);
+    
+    cy.visit('http://localhost:3000/')
+    cy.get('[href="/Perseverance"] > div')
+      .click()
+  })
+
+  it('Should display an error when there is a server error', () => {
+    cy.intercept({
+      method: "GET",
+      url: perseverancePhotosPath
+    }, 
+    {
+      statusCode: 403,
+      body: {
+        message: ''
+      }
+    })
+    cy.get('.sol').type('100').get('button').click()
+    .get('.user-message').contains('Error: 403')
+  })
+
+  it('Should display an error when there are no photos for the selected date', () => {
+    cy.intercept({
+      method: "GET",
+      url: 'https://api.nasa.gov/mars-photos/api/v1/rovers/Perseverance/photos?earth_date=2022-12-22&api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV'
+    })
+    cy.get(':nth-child(2) > input').type('2022-12-22')
+    .get('button')
+  })
 })
