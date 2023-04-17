@@ -17,9 +17,8 @@ button {
   border: none;
   border-radius: 5px;
   text-align: center;
-  font-weight: bold;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   font-family: 'Red Hat Display', sans-serif;
 }
 
@@ -28,7 +27,15 @@ input {
 }
 
 button {
+  font-size: 1.1rem;
+  color: #FFFFE7;
   cursor: pointer;
+  background-color: #C4532A;
+}
+
+button:hover {
+  scale: 1.05;
+  background-color: #DE8F44;
 }
 
 label {

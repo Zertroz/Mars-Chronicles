@@ -1,13 +1,27 @@
 const fetchRovers = async () => {
-  const response = await fetch('https://api.nasa.gov/mars-photos/api/v1/rovers/?api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV');
-  const rovers = await response.json();
-  return rovers;
+  try{
+    const response = await fetch('https://api.nasa.gov/mars-photos/api/v1/rovers/?api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV');
+    if(!response.ok) {
+      throw new Error(response.status);
+    }
+    const rovers = await response.json();
+    return rovers;
+  }catch(error) {
+    return error;
+  }
 }
 
 const fetchImages = async (type, rover, date) => {
-  const response = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?${type}=${date}&api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV`);
-  const photos = await response.json();
-  return photos;
+  try {
+    const response = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?${type}=${date}&api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV`);
+    if(!response.ok) {
+      throw new Error(response.status);
+    }
+    const photos = await response.json();
+    return photos;
+  }catch(error) {
+    return error;
+  }
 }
 
 export {fetchRovers, fetchImages};

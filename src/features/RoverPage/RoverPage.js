@@ -9,13 +9,14 @@ import { modelUrl } from "../../roverDataLocal";
 
 function RoverPage({roverName}) {
   const rovers = useSelector(state => state.root.rovers);
+  const errorMsg = useSelector(state => state.root.errorMsg);
   const selectedRover = rovers.find(rover => rover.name === roverName);
 
   return (
     <div className="rover-page">
       <div className="rover-page-top">
         {selectedRover ? <Details rover={selectedRover}/>
-        : <UserMessage message={'Loading...'}/>}
+        : <UserMessage message={errorMsg ? errorMsg :'Loading...'}/>}
         <iframe src={ modelUrl[roverName] } title="rover3D" frameBorder="0"/>
       </div>
       <Form rover={selectedRover} />

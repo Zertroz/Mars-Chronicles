@@ -14,17 +14,15 @@ function Gallery () {
   }
 
   const roverImages = useSelector(state => state.root.images);
+  const errorMsg = useSelector(state => state.root.errorMsg);
   const roverTiles = roverImages.map((img) => <img src={img.img_src} onClick={event => openModal(event)} alt={`Rover shot ${img.id}`} className="gallery-tile" key={img.id}/>);
   
   return (
     <>
     {roverImages.length ? 
-      <section className="gallery-grid">
-        {roverTiles}
-      </section>
-      :
-      <UserMessage message={'Select Sol or Date...'}/>}
-      {modalSrc && <Modal modalSrc={modalSrc} setModalSrc={setModalSrc} />}
+      <section className="gallery-grid"> {roverTiles} </section> :
+      <UserMessage message={errorMsg ? errorMsg : 'Select Sol or Date...'}/>}
+    {modalSrc && <Modal modalSrc={modalSrc} setModalSrc={setModalSrc} />}
     </>
   )
 }
