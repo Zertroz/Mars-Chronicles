@@ -4,7 +4,7 @@ import roversFixture from "../fixtures/roversFixture";
 
 describe('Dashboard User Stories:', () => {
 
-  const roversPath = 'https://api.nasa.gov/mars-photos/api/v1/rovers/?api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV'
+  const roversPath = 'https://api.nasa.gov/mars-photos/api/v1/rovers/?api_key=vnSCs1JJ7ERtXeAqN6cajKwEh99pz5q6xueRhxMV';
 
   beforeEach(() => {
 
@@ -19,7 +19,6 @@ describe('Dashboard User Stories:', () => {
       .should('exist')
       .should('be.visible')
       .contains('Mars Chronicles');
-
   });
 
   it('user should see all rover images and they should have alt text', () => {
@@ -31,6 +30,10 @@ describe('Dashboard User Stories:', () => {
     cy.get('[href="/Spirit"] > div > .rover-icon-img')
      .should('exist').should('be.visible')
      .should('have.attr', 'alt');
+  });
 
+  it('should display error message if there are not rover icons', () => {
+    cy.intercept('GET', roversPath, {statusCode: 403})
+    .get('.user-message').contains('Error: 403');
   });
 })
