@@ -1,4 +1,4 @@
-# Mars Chronicles
+# [Mars Chronicles](https://marschronicles.netlify.app/)
 
 ## Abstract:
 
@@ -21,7 +21,7 @@
 
 1. A window should be opened in your default browser, if not, navigate to http://localhost:3000 in your preferred browser to view the hosted application!
 
-Alternatively, the app is deployed via <Vercel?> and that link is below.
+Alternatively, the app is deployed via Netlify.
 
 ## Testing Instructions:
 [//]: <>
@@ -37,7 +37,7 @@ Run 'npm run cypress' from the terminal while within the main directory of the a
 ## Live demo:
 
 
-Application is deployed live at: (<deployment link here>)
+Application is deployed live at: [Netlify](https://marschronicles.netlify.app/)
 
 
 ## Context:
