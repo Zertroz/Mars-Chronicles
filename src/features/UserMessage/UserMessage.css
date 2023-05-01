@@ -7,12 +7,13 @@
   font-family: 'Alien League II';
   font-size: 4rem;
   flex-grow: 1;
-  min-width: 26rem;
-  min-height: 12rem;
+  width: 100%;
+  min-height: 8rem;
+  min-width: 8rem;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.3);
   text-align: center;
-  padding: 12px;
+  padding: 2rem;
   animation: landing 6s linear infinite;
 }
 
