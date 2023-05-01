@@ -1,9 +1,8 @@
 form {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0.8rem;
-  gap: 4vw;
+  justify-content: space-between;
+  padding: 0.8rem 1.2rem;
   flex-shrink: 0;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 5px;
@@ -11,9 +10,10 @@ form {
 }
 
 input,
+select,
 button {
   height: 1.8rem;
-  width: 7rem;
+  max-width: 15rem;
   border: none;
   border-radius: 5px;
   text-align: center;
@@ -22,7 +22,8 @@ button {
   font-family: 'Red Hat Display', sans-serif;
 }
 
-input {
+input,
+select {
   margin-left: 0.3rem;
 }
 
@@ -44,7 +45,7 @@ label {
   margin: 0;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 1000px) {
   form {
     flex-direction: column;
     align-items: stretch;
@@ -60,12 +61,10 @@ label {
     width: 6rem;
   }
 
-  input {
-    width: auto;
-    flex-grow: 1;
-  }
-
+  input,
+  select,
   button {
+    max-width: none;
     width: auto;
     flex-grow: 1;
   }
