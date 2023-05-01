@@ -3,17 +3,38 @@
 header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-grow: 0;
   flex-shrink: 0;
-  height: 100px;
+  height: 6rem;
   width: 100%;
+  max-width: 1000px;
+}
+
+img {
+  width: 3.8rem;
+  height: 3.8rem;
 }
 
 .header-logo {
   font-family: 'Alien League II';
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: #FFFFE7;
   margin: 0;
   text-align: center;
+}
+
+@media only screen and (max-width: 650px) {
+  header {
+    height: 5rem;
+  }
+
+  img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .header-logo {
+    font-size: 2.5rem;
+  }
 }
