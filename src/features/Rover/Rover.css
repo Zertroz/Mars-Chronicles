@@ -8,8 +8,8 @@
 }
 
 .rover-icon-img {
-  width: 200px;
-  height: 200px;
+  width: 190px;
+  height: 190px;
   border: 2px solid #FFFFE7;
   border-radius: 100px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -41,4 +41,11 @@
 
 .placeholder {
   color: transparent;
+}
+
+@media only screen and (max-width: 850px) {
+  .rover-icon-img {
+    width: 150px;
+    height: 150px;
+  } 
 }
