@@ -17,7 +17,10 @@ function Rover({rover}) {
     <Link to={`/${rover.name}`} key={rover.id} className='rover-link'>
       <div>
         <img src={imgObj[rover.name]} alt={rover.name} className='rover-icon-img'/>
-        <p className='rover-icon-name'>{rover.name}</p>
+        <div className='rover-footer'>
+          <p className='rover-icon-name'>{rover.name}</p>
+          <p className='rover-icon-year'>{(new Date(rover.launch_date)).getFullYear()}</p>
+        </div>
       </div>
     </Link>
   )

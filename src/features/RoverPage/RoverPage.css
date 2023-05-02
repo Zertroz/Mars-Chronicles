@@ -1,16 +1,12 @@
 .rover-page {
-  position: fixed;
-  top: 100px;
-  height: calc(100vh - 130px);
+  flex-grow: 1;
   overflow: auto;
   display: flex;
   flex-direction: column;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   gap: 1.2rem;
-  max-width: 1000px;
+  max-width: 1100px;
+  width: 100%;
+  padding-right: 10px;
 }
 
 .rover-page-top {
@@ -41,8 +37,7 @@ iframe {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #ffffe734;
-  border-radius: 7px;
+  background-color: #ffffe731;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -57,11 +52,16 @@ iframe {
 }
 
 @media only screen and (max-width: 650px) {
+  .rover-page {
+    max-width: 100%;
+    gap: 0.8rem;
+  }
   .rover-page-top {
     flex-direction: column;
+    gap: 0.8rem;
   }
   iframe {
-    width: 100%;
+    width: auto;
     height: 300px;
   }
 }

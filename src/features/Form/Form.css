@@ -2,7 +2,7 @@ form {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.8rem 1.2rem;
+  padding: 1rem 2.5rem;
   flex-shrink: 0;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 5px;
@@ -14,17 +14,13 @@ select,
 button {
   height: 1.8rem;
   max-width: 15rem;
+  min-width: 8rem;
   border: none;
   border-radius: 5px;
   text-align: center;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   font-family: 'Red Hat Display', sans-serif;
-}
-
-input,
-select {
-  margin-left: 0.3rem;
 }
 
 button {
@@ -35,14 +31,15 @@ button {
 }
 
 button:hover {
-  scale: 1.05;
   background-color: #DE8F44;
 }
 
 label {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
   margin: 0;
+  display: flex;
+  align-items: center;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -58,6 +55,7 @@ label {
   }
 
   label {
+    flex-shrink: 0;
     width: 6rem;
   }
 

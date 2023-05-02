@@ -43,7 +43,6 @@ function Form({ rover }) {
     }
   };
 
-
   useEffect(() => {
     return () => {
       dispatch(setImages([]));
@@ -54,7 +53,7 @@ function Form({ rover }) {
   return (
     <form>
       <div className="input-parent">
-        <label>Mars Sol:</label>
+        <label>Mars Sol</label>
         <input
           className="sol"
           name="sol"
@@ -70,7 +69,7 @@ function Form({ rover }) {
         />
       </div>
       <div className="input-parent">
-        <label>Earth Date:</label>
+        <label>Earth Date</label>
         <input
           name="earth-date"
           type="date"
@@ -84,7 +83,7 @@ function Form({ rover }) {
         />
       </div>
       <div className="input-parent">
-        <label>Rover Cam:</label>
+        <label>Rover Cam</label>
         <select value={camera} name="cam-select" onChange={e => setCamera(e.target.value)}>
           <option value="">Any Camera</option>
           {cameraOptions}
