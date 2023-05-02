@@ -61,7 +61,7 @@ function Form({ rover }) {
           type="number"
           min="0"
           max={maxSols}
-          placeholder={"Select Sol"}
+          placeholder={"Sol"}
           value={sol}
           onChange={(event) => {
             setSol(event.target.value);

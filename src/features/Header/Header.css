@@ -11,9 +11,10 @@ header {
   max-width: 1000px;
 }
 
-img {
+.nasa-logo {
   width: 3.8rem;
   height: 3.8rem;
+  padding-top: 5px;
 }
 
 .header-logo {
@@ -22,6 +23,19 @@ img {
   color: #FFFFE7;
   margin: 0;
   text-align: center;
+}
+
+a {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo-sm {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #FFFFE7;
+  margin: 0;
+  margin-right: 10px;
 }
 
 @media only screen and (max-width: 650px) {

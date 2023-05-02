@@ -8,7 +8,10 @@ function Header() {
       <Link to="/">
         <h1 className='header-logo'>Mars Chronicles</h1>
       </Link>
-      <img src={nasa}/>
+      <a href='https://api.nasa.gov/' target="_blank">
+        <img className='nasa-logo' src={nasa}/>
+        <p className='header-logo-sm'>{'{ APIs }'}</p>
+      </a>
     </header>
   )
 }
