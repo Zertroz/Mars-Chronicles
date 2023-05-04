@@ -4,7 +4,7 @@
   align-content: center;
   flex-grow: 1;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 2.5rem;
   overflow: auto;
   padding: 2rem;
   max-width: 1100px;
@@ -23,7 +23,7 @@
   .rover-icon-container {
     align-items: start;
     align-content: start;
-    gap: 2rem;
+    gap: 1rem;
     margin-top: 1rem;
   } 
 }

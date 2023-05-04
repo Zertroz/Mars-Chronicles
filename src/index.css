@@ -7,7 +7,10 @@
 body {
   margin: 0;
   height: 100vh;
+  width: 100vw;
   background: rgb(196,83,42);background: linear-gradient(-45deg, rgba(196,83,42,1) 0%, rgba(78,80,128,1) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: 'Red Hat Display', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
