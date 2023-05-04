@@ -89,7 +89,7 @@ function Form({ rover }) {
           {cameraOptions}
         </select>
       </div>
-      <button onClick={fetchData}>Get Photos</button>
+      <button className="submit-button" onClick={fetchData}>Get Photos</button>
     </form>
   );
 }

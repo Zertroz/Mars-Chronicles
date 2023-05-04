@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   font-family: 'Alien League II';
-  font-size: 4rem;
+  font-size: 2rem;
   flex-grow: 1;
   width: 100%;
   min-height: 8rem;
@@ -14,7 +14,7 @@
   background-color: rgba(255, 255, 255, 0.3);
   text-align: center;
   padding: 2rem;
-  animation: landing 6s linear infinite;
+  /* animation: landing 6s linear infinite; */
 }
 
 @keyframes landing {

@@ -11,7 +11,7 @@ form {
 
 input,
 select,
-button {
+.submit-button {
   height: 1.8rem;
   max-width: 15rem;
   min-width: 8rem;
@@ -23,14 +23,14 @@ button {
   font-family: 'Red Hat Display', sans-serif;
 }
 
-button {
+.submit-button {
   font-size: 1.1rem;
   color: #FFFFE7;
   cursor: pointer;
   background-color: #C4532A;
 }
 
-button:hover {
+.submit-button:hover {
   background-color: #DE8F44;
 }
 
@@ -61,7 +61,7 @@ label {
 
   input,
   select,
-  button {
+  .submit-button {
     max-width: none;
     width: auto;
     flex-grow: 1;

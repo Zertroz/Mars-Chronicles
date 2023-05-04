@@ -5,7 +5,6 @@
   flex-grow: 1;
   flex-wrap: wrap;
   gap: 2.5rem;
-  overflow: auto;
   padding: 2rem;
   max-width: 1100px;
 } 
