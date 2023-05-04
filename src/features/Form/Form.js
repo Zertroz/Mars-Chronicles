@@ -26,20 +26,22 @@ function Form({ rover }) {
 
   const fetchData = async (event) => {
     event.preventDefault();
-    const roverPhotos = await fetchImages(
-      dateType,
-      rover.name,
-      dateQuery,
-      camera
-    );
-    if (roverPhotos instanceof Error) {
-      dispatch(setErrorMessage(roverPhotos.toString()));
-    } else {
-      dispatch(setErrorMessage(""));
-      dispatch(setImages(roverPhotos.photos));
-      roverPhotos.photos.length
-        ? dispatch(setErrorMessage(""))
-        : dispatch(setErrorMessage("No Photos Found"));
+    if(date || sol) {
+      const roverPhotos = await fetchImages(
+        dateType,
+        rover.name,
+        dateQuery,
+        camera
+      );
+      if (roverPhotos instanceof Error) {
+        dispatch(setErrorMessage(roverPhotos.toString()));
+      } else {
+        dispatch(setErrorMessage(""));
+        dispatch(setImages(roverPhotos.photos));
+        roverPhotos.photos.length
+          ? dispatch(setErrorMessage(""))
+          : dispatch(setErrorMessage("No Photos Found"));
+      }
     }
   };
 
@@ -89,7 +91,7 @@ function Form({ rover }) {
           {cameraOptions}
         </select>
       </div>
-      <button className="submit-button" onClick={fetchData}>Get Photos</button>
+      <button disabled={!(sol || date)} className="submit-button" onClick={fetchData}>Get Photos</button>
     </form>
   );
 }

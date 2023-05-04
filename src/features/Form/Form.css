@@ -21,6 +21,7 @@ select,
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   font-family: 'Red Hat Display', sans-serif;
+  font-size: 16px;
 }
 
 .submit-button {
@@ -32,6 +33,11 @@ select,
 
 .submit-button:hover {
   background-color: #DE8F44;
+}
+
+.submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 label {

@@ -8,8 +8,7 @@
     left:0;
     right: 0;
     background: rgba(0, 0, 0, 0.606);
-    overflow: auto;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
     z-index: 10;
 }
 
