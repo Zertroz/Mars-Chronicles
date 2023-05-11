@@ -1,4 +1,4 @@
-# [Mars Chronicles](https://marschronicles.netlify.app/)
+# [Mars Chronicles](https://mars-chronicles.vercel.app/)
 
 ## Abstract:
 
@@ -37,7 +37,7 @@ Run 'npm run cypress' from the terminal while within the main directory of the a
 ## Live demo:
 
 
-Application is deployed live at: [Netlify](https://marschronicles.netlify.app/)
+Application is deployed live at: [Netlify](https://mars-chronicles.vercel.app/)
 
 
 ## Context:
