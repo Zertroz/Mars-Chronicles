@@ -71,12 +71,12 @@ describe('RoverPage user stories:', () => {
     cy.get('form')
     .should('exist').should('be.visible')
       .get(':nth-child(1) > label')
-      .contains('Mars Sol:');
+      .contains('Mars Sol');
 
     cy.get('form')
     .should('exist').should('be.visible')
       .get(':nth-child(2) > label')
-      .contains('Earth Date:');
+      .contains('Earth Date');
          
     cy.get('.user-message')
     .should('exist').should('be.visible')
