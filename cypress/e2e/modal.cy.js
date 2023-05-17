@@ -17,7 +17,7 @@ describe('Modal Test', () => {
   it('Should be able to click on a photo', () => {
     cy.get('.sol').type('100')
       .get('button').click()
-      .get('img').first()
+      .get('.gallery-tile').first()
       .click()
       .get('.modal-img').should('be.visible');
   });
@@ -25,7 +25,7 @@ describe('Modal Test', () => {
   it('Should be able to close the modal image', () => {
     cy.get('.sol').type('100')
       .get('button').click()
-      .get('img').first()
+      .get('.gallery-tile').first()
       .click().wait(1000)
       .get('.x-button').click()
       .get('.modal-img').should('not.exist');
